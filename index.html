@@ -1,10 +1,19 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Hello</title>
+  <title>2-3 Tree Simulation</title>
+  <script src="TreeDrawer.js"></script>
+  <script src="TwoThreeTree.js"></script>
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <h1>Let's Build a 2-3 Tree!</h1>
+  <p id="nextKeyText">Next key to add: 00</p>
+  <div width="100%"><canvas id="can1"better_two_three width="550" height="250" style="border: 1px solid #cccccc;">
+  HTML5 Canvas not supported
+  </canvas></div>
+  <button type="button" onclick="addRandomKey()">Add key</button>
+  <button type="button" onclick="startTree()">Start over</button>
 </body>
 </html>

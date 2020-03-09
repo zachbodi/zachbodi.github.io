@@ -1,0 +1,8 @@
+{
+    "version": "2.0.0",
+    "command": "google-chrome-stable",    
+    "windows": {
+        "command": "google-chrome-stable"
+    },
+    "args": ["index.html"]
+}
