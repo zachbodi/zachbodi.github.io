@@ -1,3 +1,7 @@
+function numSort(x,y) {
+    return x-y;
+}
+
 class Node {
     constructor(left, center, right, parent, data) {
         this.children = [left,center,right];
@@ -60,11 +64,11 @@ class TwoThree {
     }
     insert_recur(key, node, split_nodes, which_child) {
         if(node.data[1] == null && !(node.children[0] || node.children[1] || node.children[2])) { // If this node has one member and is a leaf
-            node.data = [node.data[0], key].sort();
+            node.data = [node.data[0], key].sort(numSort);
             return;
         }
         else if(node.data[1] == null) { // If this node is a parent with one data member
-            node.data = [node.data[0], key].sort();
+            node.data = [node.data[0], key].sort(numSort);
             switch(which_child) {
                 case 0:
                     node.children = [split_nodes[0], split_nodes[1], node.children[2]];
@@ -75,7 +79,7 @@ class TwoThree {
             }
             return;
         }
-        let keys = [node.data[0], node.data[1], key].sort();
+        let keys = [node.data[0], node.data[1], key].sort(numSort);
         let left_split;
         let right_split;
         switch(which_child) {
@@ -132,7 +136,6 @@ class TwoThree {
 
     }
     show_recur(node) {
-        console.log(node.data);
         var i;
         for(i = 0; i < 3; i++) {
             if(node.children[i])
@@ -189,7 +192,6 @@ function drawTreeRecur(node, canvasNode, height) {
     }
 
     if(node.children[0]) {
-        console.log(node);
         drawTreeRecur(node.children[0], canvasNode.createLeft(node.children[0].data), height - 1);
     }
     
